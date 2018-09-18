@@ -12,15 +12,15 @@ class PigLatinizer
 
   def piglatinize_word(word)
     vowels = ["a", "e", "i", "o", "u"]
-    string_array = word.downcase.split("")
+    string_array = word.split("")
     moved_chars = ""
     # binding.pry
 
 
-    if vowels.include?(string_array[0])
+    if vowels.include?(string_array[0].downcase)
       return "#{word}way"
-    else !vowels.include?(string_array[0])
-      until vowels.include?(string_array[0])
+    else !vowels.include?(string_array[0].downcase)
+      until vowels.include?(string_array[0].downcase)
         # binding.pry
         x = string_array.shift
         moved_chars << x
